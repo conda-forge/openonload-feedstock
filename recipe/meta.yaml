@@ -1,4 +1,4 @@
-{% set version = "9.0.1" %}
+{% set version = "9.0.2" %}
 
 package:
   name: openonload
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/Xilinx-CNS/onload/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 75bdf46cefc0870edf0769ea0eff588269eeb6b0760f1278ae6103fd9b036848
+  sha256: 90f6e0da9686567fd762eed1669121b5f888700dfe242c88757dfebb360b491b
 
 build:
-  number: 2
+  number: 0
   skip: true  # [not linux]
 
 requirements:
