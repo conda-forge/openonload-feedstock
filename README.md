@@ -40,31 +40,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `openonload` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install openonload
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install openonload
 ```
 
-It is possible to list all of the versions of `openonload` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add openonload
+# for installing globally
+pixi global install openonload
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `openonload` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search openonload --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search openonload --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search openonload --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -76,6 +118,8 @@ mamba repoquery whoneeds openonload --channel conda-forge
 # List dependencies of `openonload`:
 mamba repoquery depends openonload --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge

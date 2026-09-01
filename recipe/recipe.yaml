@@ -1,0 +1,42 @@
+schema_version: 1
+
+context:
+  version: "9.0.2"
+
+package:
+  name: openonload
+  version: ${{ version }}
+
+source:
+  url: https://github.com/Xilinx-CNS/onload/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 90f6e0da9686567fd762eed1669121b5f888700dfe242c88757dfebb360b491b
+
+build:
+  number: 4
+  skip: not linux
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    - make
+  host:
+    - libcap
+  run:
+
+tests:
+  - script:
+      - test -f $PREFIX/lib/libefcp.so
+      - test -d $PREFIX/include/onload
+      - test -d $PREFIX/libexec/onload
+
+about:
+  summary: Onload is a premium add-on product for XtremeScale adapters that provides POSIX compliant TCP, UDP, and multicast interfaces with full kernel bypass.
+  license: GPL-2.0-only AND BSD-2-Clause
+  license_file: src/onload/distfiles/LICENSES-ALL
+  homepage: https://www.xilinx.com/support/download/nic-software-and-drivers.html#open
+
+extra:
+  recipe-maintainers:
+    - isuruf
+    - timkpaine
